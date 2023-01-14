@@ -1,0 +1,38 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+trace.db/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+trace.db/h2datasource.trace.db
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### node modules ###
+/node/
+
+### logs ###
+*.log
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### Vaadin auto generated stuff ###
+/node_modules/
+/package.json
+/package-lock.json
+/webpack.config.js
+/webpack.generated.js
