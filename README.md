@@ -16,14 +16,20 @@ git clone https://github.com/ehsansasanian/drei-location-api.git
 ```
 cd drei-location-api
 ```
-3. Build the application and start the services using docker-compose:
+3. Build the backend application using docker-compose build:
 
 ```
-docker-compose up --build
+docker-compose build
+```
+4. Start the services using:
+
+```
+docker-compose up 
 ```
 #### Note
 - The application uses a database, which is also automated using the docker-compose. It is configured to use an environment variable `SPRING_DATASOURCE_URL` to connect to the database. You can check the file for more details.
 - Alternatively, it is possible to run the application and the database separately. Make sure a postgres with the PostGIS extension runs on `localhost:5433`, with a proper `username`, `password`, and `database`. Then the below command could be used to run the app:
+- Ensure sure `8080`, `5433`, and `5050` ports are available on your device. The backend, postgres, and pgAdmin respectively use the ports to run on the machine.
 
 ```
 mvn spring-boot:run
@@ -91,5 +97,17 @@ Example Response
     }
  ]
 ```
-Thank you for using this application!
+
+To check the changes in the database, you can use `psql -h localhost -p 5433 -U postgres -d postgres` and `postgres` as password. Alternatively, as the pgAdmin is included in the docker-compose file, it should be up and running on your machine. Simply click [here](http://localhost:5050) in see the pgAdmin client in your browser.
+
+To login, use`test@test.com` as Username and `test` as Password.
+
+### Tear Down
+To stop the services, please use `Ctrl+c` and to remove the containers use:
+
+```
+docker-compose down
+```
+
+#### Thank you for using this application!
 
