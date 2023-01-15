@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  database: 
+    image: postgis/postgis:latest
+    container_name: posrgres-drei
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+    ports:
+      - "5433:5432"
+    restart: always
+
+  pg-admin: 
+    image: dpage/pgadmin4
+    environment: 
+      - PGADMIN_DEFAULT_EMAIL=test@test.com
+      - PGADMIN_DEFAULT_PASSWORD=test
+    ports:
+      - "5050:80"
+    restart: always
+
+  backend:
+    image: drei-demo:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - spring_datasource_url=jdbc:postgresql://database:5432/postgres
+    depends_on:
+      - database
+    ports:
+      - 8080:8080
+
+
+#     volumes:
+#       - data: /var/lib/postgresql/data
+
+# volumes:
+#   data: 
+
