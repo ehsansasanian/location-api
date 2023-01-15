@@ -16,6 +16,7 @@
     <properties>
         <java.version>17</java.version>
         <hibernate.spatial.version>6.1.6.Final</hibernate.spatial.version>
+        <postgres.testcontainer.versio>1.17.6</postgres.testcontainer.versio>
     </properties>
     <dependencies>
         <dependency>
@@ -51,6 +52,12 @@
             <artifactId>hibernate-spatial</artifactId>
             <version>${hibernate.spatial.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgres.testcontainer.versio}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -61,6 +68,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>
