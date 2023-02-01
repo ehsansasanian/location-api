@@ -10,11 +10,11 @@ This is a backend application that provides a REST API to save, and search GEO l
 ### Getting Started
 1. Clone the repository:
 ```
-git clone https://github.com/ehsansasanian/drei-location-api.git
+git clone https://github.com/ehsansasanian/location-api.git
 ```
 2. Change directory to the project:
 ```
-cd drei-location-api
+cd location-api
 ```
 3. Build the backend application using docker-compose build:
 
